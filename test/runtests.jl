@@ -1,3 +1,8 @@
+#
+# This file is part of the SlowActors.jl Julia package, 
+# MIT license, part of https://github.com/JuliaActors
+#
+
 using Test, SafeTestsets
 
 function redirect_devnull(f)
@@ -8,7 +13,8 @@ function redirect_devnull(f)
     end
 end
 
-@safetestset "Basics"        begin include("test_basics.jl") end
+@safetestset "Basics"       begin include("test_basics.jl") end
+@safetestset "Interface"    begin include("test_interface.jl") end
 
 println("running examples, output suppressed!")
 redirect_devnull() do
