@@ -13,10 +13,17 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
-        "API" => "api.md"
+        "API" => "api.md",
+        "Integration" => "integrate.md"
     ],
 )
 
 deploydocs(;
     repo="github.com/JuliaActors/SlowActors.jl",
+    target = "build",
+    deps   = nothing,
+    make   = nothing,
+    devbranch = "master",
+    devurl = "dev",
+    versions = ["stable" => "v^", "v#.#", "dev" => "dev"]
 )
